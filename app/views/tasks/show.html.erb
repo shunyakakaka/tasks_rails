@@ -10,7 +10,7 @@
     <h4><%= @task.title%></h4>
   </div>
   <div class="card-body">
-    <p class="card-text"><%= @task.body%></p>
+    <p class="card-text"><%= simple_format(@task.body)%></p>
     <p class="text-right font-weight-bold mr-10"><%= @task.name%></p>
   </div>
 </div>
