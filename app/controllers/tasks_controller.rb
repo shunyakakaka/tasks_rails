@@ -11,8 +11,9 @@ class TasksController < ApplicationController
   end 
 
   def create
-    Task.create(task_params)
-    redirect_to tasks_path
+    task = Task.create(task_params)
+    flash[:notice] = "「#{task.title}」の掲示板が作成されました"
+    redirect_to task
   end
 
   def show 
@@ -30,7 +31,7 @@ class TasksController < ApplicationController
   def destroy
     @task.delete
 
-    redirect_to tasks_path
+    redirect_to tasks_path, flash: {notice: "「#{@task.title}」の掲示板が削除されました"}
   end
 
   private
