@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    @tasks = Task.all
   end
 
   def new
@@ -8,7 +9,9 @@ class TasksController < ApplicationController
 
   def create
     Task.create(task_params)
-    
+  end
+
+  def show 
   end
 
   private
