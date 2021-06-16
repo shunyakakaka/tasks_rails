@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get "tasks", to: "tasks#index"
-  get "tasks/create", to: "tasks#create"
+  get "tasks/new", to: "tasks#new"
 end
